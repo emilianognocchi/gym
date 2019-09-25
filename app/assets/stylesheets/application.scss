@@ -1,0 +1,24 @@
+/*
+*= require simple_calendar
+*= require trix
+*= require_tree .
+
+*/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import url("https://fonts.googleapis.com/css?family=Bungee+Shade");
+
+
+.button {
+   
+ }
+
+.button:hover {opacity: 1}
+
+.title{
+	font-family: "Bungee Shade";
+	font-size:44px;
+	text-align: center;
+}

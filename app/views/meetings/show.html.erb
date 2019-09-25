@@ -1,0 +1,80 @@
+<div class="title">Detalles de la Reserva</div> 
+ <br/><br/>
+ 
+ <div class="container">
+
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+
+	<div class="col-md">
+   
+		<table class="table">
+ 		  <tbody>
+		    <tr>
+		      <th scope="row">Actividad</th>
+		      <td><%= @meeting.name %></td> 
+		    </tr>
+			<tr>
+		      <th scope="row">Dias</th>
+		      <td>
+		        <% if @meeting.monday == "SI" %>Lunes <%end%>
+		        <% if @meeting.tuesday == "SI" %> Martes  <%end%>
+		        <% if @meeting.wednesday == "SI" %> Miercoles <%end%>
+		        <% if @meeting.thursday == "SI" %> Jueves <%end%>
+				<% if @meeting.thursday == "SI" %> Viernes <%end%>
+				 <%Date.today%> FF
+
+		      </td> 
+		    </tr>
+
+		    <tr>
+		      <th scope="row">Hora inicio</th>
+		      <td><%= @meeting.start_hour %>:<%= @meeting.start_minute %></td> 
+		    </tr>
+		    <tr>
+		      <th scope="row">Hora fin</th>
+		      <td><%= @meeting.end_hour %>:<%= @meeting.end_minute %></td> 
+		    </tr>
+ 
+			<tr>
+		      <th scope="row">Profesor</th>
+		      <td><%= @meeting.teacher %></td> 
+		    </tr>
+
+			<tr>
+		      <th scope="row">Cupos Disponibles</th>
+		      <td><%= @meeting.stock %></td> 
+		    </tr>
+
+			<tr>
+		      <th scope="row">Lugar</th>
+		      <td><%= @meeting.place %></td> 
+		    </tr>
+
+			<tr>
+		      <th scope="row">Comentarios</th>
+		      <td><%= @meeting.comment %></td> 
+		    </tr>
+
+			<tr>
+		      <th scope="row">Materiales necesarios</th>
+		      <td><%= @meeting.equipment %></td> 
+		    </tr>
+
+			<tr>
+		      <th scope="row">Commentarios</th>
+		      <td><%= @meeting.comment %></td> 
+		    </tr>
+ 
+
+			<tr>
+		      <th scope="row"><%= link_to 'Editar', edit_meeting_path(@meeting) %> |
+			<%= link_to 'Atras', meetings_path %></th>
+		      <td></td> 
+		    </tr>
+		  </tbody>
+		</table>
+		</div>
+	
+  </div>		
+  <div class="col-sm-2"></div>

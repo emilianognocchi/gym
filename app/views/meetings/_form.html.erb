@@ -1,0 +1,108 @@
+
+<%=  form_with(model: meeting, local: true) do |form| %>
+
+  <% if meeting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
+
+      <ul>
+      <% meeting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <%= simple_form_for @meeting do |f| %>
+     <div class="container">
+      <br/><br/> 
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+
+          <div class="col-md">
+       
+            <table class="table">
+              <tbody> 
+                  
+
+                <tr>
+                     <%= f.input :name %>
+                </tr>
+
+                <tr>
+                     <%= f.input :teacher %>
+                </tr>
+
+                <tr>
+                     <%= f.input :stock %>
+                </tr>
+
+                <tr>
+                     <%= f.input :equipment %>
+                </tr>
+
+                <tr>
+                     <%= f.input :place %>
+                </tr>
+
+                <tr>
+                     <%= f.input :comment %>
+                </tr>
+                <!--tr>
+              <%= f.collection_select :id, Meeting.order(:name),:id,:name, include_blank: true %>
+                </tr-->
+
+                <tr>
+                  <th scope="row">Lunes</th>
+                  <td><%= form.select :monday, ['SI', 'NO'], class: "form-control"%></td> 
+                </tr>
+                <tr>
+                  <th scope="row">Martes</th>
+                  <td><%= form.select :tuesday, ['SI', 'NO'], class: "form-control"%></td> 
+                </tr>
+                <tr>
+                  <th scope="row">Miercoles</th>
+                  <td><%= form.select :wednesday, ['SI', 'NO'], class: "form-control"%></td> 
+                </tr>
+                <tr>
+                  <th scope="row">Jueves</th>
+                  <td><%= form.select :thursday, ['SI', 'NO'], class: "form-control"%></td> 
+                </tr>
+                <tr>
+                  <th scope="row">Viernes</th>
+                  <td><%= form.select :friday, ['SI', 'NO'], class: "form-control"%></td> 
+                </tr>
+
+                <tr>
+                  <th scope="row">Hora Inicio</th>
+                  <td><%= form.select :start_hour, ['7', '8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23'], class: "form-control"%> 
+                  <%= form.select :start_minute, ['00','05','10','15','20','25','30','35','40','45','50','55'], class: "form-control"%></td> 
+                </tr>
+ 
+
+                <tr>
+                  <th scope="row">Hora Fin</th>
+                  <td><%= form.select :end_hour, ['7', '8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23'], class: "form-control"%> 
+                  <%= form.select :end_minute, ['00','05','10','15','20','25','30','35','40','45','50','55'], class: "form-control"%></td> 
+                </tr>
+
+
+                <tr>
+                  <th scope="row">  
+                    <%= f.button :submit, class: "btn-primary" %>
+                      <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+                      <%= link_to 'Back', meetings_path %>
+
+                  </th>
+                  <td></td> 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      <% end %>
+      <% end %>
+    </div> 
+
+
+
